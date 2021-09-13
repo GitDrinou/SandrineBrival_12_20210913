@@ -1,0 +1,77 @@
+.dashbWrapper {
+    display: grid;
+    grid-template-columns: 77px auto;
+}
+
+.bannerWrapper {
+    background: #020203;
+    width: 77px;
+    height: 1024px; 
+    padding: 20px;  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pictoList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 879px;
+    & > li {
+        padding-bottom: 20px;
+    }
+}
+
+.copyright {
+    font-weight: 500;
+    font-style: normal;
+    font-size: 0.75rem;
+    color: #FFF;
+    transform: rotate(-90deg);
+    width: 145px;
+    margin-bottom: 100px;    
+}
+
+
+.dashContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0 100px;
+}
+
+.profilHeader-wrapper {
+    background-color: #FFF;
+    margin: 65px 0 40px 0;
+    
+    &  > h1 {
+        font-weight: 500;
+        font-style: normal;
+        font-size: 3rem;
+       line-height: 24px;
+    }
+
+    & > p {
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.125rem;
+        line-height: 24px;
+    }
+}
+
+.userName {
+    color: #E60000;
+}
+
+.datasWrapper {
+    display: grid;
+    grid-template-columns: 840px 1fr;
+    //border: 1px solid red;
+}

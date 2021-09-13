@@ -1,0 +1,29 @@
+.activityWrapper {
+    width: 830px;
+    height: auto;
+    padding: 24px 0 24px 32px;
+    background-color: #FBFBFB;
+    border: 1px dotted black;
+
+    & > h1 {
+        font-weight: 500;
+        font-style: normal;
+        font-size: 0.94rem;
+        line-height: 24px;
+    }
+}
+
+.recharts-cartesian-axis-tick, .recharts-legend-item {    
+    font-size: 0.8rem;
+    font-family: Roboto, sans-serif;
+}
+
+.graphList {
+    margin-top: 30px;
+}
+
+.averageContainer {
+    background-color: #FF0000;
+    width: 263px;
+}
+
