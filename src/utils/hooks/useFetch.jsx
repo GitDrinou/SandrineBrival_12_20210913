@@ -15,8 +15,8 @@ export function useFetch(url) {
 
         if (!url) return
 
-        const getData = () => {
-            fetch(url,
+        const getData = async () => {
+            await fetch(url,
             { headers : 
                 {
                     'Content-type': 'application/json',

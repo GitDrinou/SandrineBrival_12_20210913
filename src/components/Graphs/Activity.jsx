@@ -1,6 +1,6 @@
 import { useFetch } from '../../utils/hooks/useFetch'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from "recharts"
-import '../../sass/Graphics.scss'
+import '../../sass/GraphActivity.scss'
 
 
 function Activity() {
