@@ -10,7 +10,7 @@ function Goal() {
     const padAngle = 100-data["todayScore"]*100
     
     //console.log(data)
-    console.log(goalData)
+    //console.log(goalData)
     
     return (
         <div className="goalContainer">

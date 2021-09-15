@@ -3,7 +3,6 @@
     height: auto;
     padding: 24px 0 24px 32px;
     background-color: #FBFBFB;
-    border: 1px dotted black;
 
     & > h1 {
         font-weight: 500;
@@ -14,5 +13,6 @@
     & > .recharts-cartesian-axis-tick, .recharts-legend-item {    
         font-size: 0.8rem;
         font-family: Roboto, sans-serif;
+        margin-bottom: 20px;
     }
 }

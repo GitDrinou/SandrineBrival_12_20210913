@@ -72,6 +72,6 @@
 
 .datasWrapper {
     display: grid;
-    grid-template-columns: 840px 1fr;
+    grid-template-columns: 840px auto;
     //border: 1px solid red;
 }
