@@ -14,7 +14,7 @@ function Average() {
             <LineChart width={263} height={238} data={averageData} margin={{ top: 5, right: 10, left: 10, bottom: 5 }}>
                 <XAxis data="day" tick={{ fill: '#FFFFFF'}} />
                 <YAxis data="sessionLength" hide="true" />
-                <Tooltip s/>
+                <Tooltip />
                 <Legend verticalAlign="top" align="left" width={190} heigth={50} iconSize={0} fill="" />
                 <Line type="monotone" dataKey="sessionLength" strokeDashArray="0" stroke="#FFFFFF" strokeWidth={2} dot={false}  name="Durée moyenne des sessions" />                
             </LineChart>

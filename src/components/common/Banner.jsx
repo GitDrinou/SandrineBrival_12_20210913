@@ -16,7 +16,7 @@ function Banner() {
                 </ul> 
             </div>
                       
-            <div className="copyright">Copiryght, SportSee 2020</div>
+            <div className="copyright">Copyright, SportSee 2020</div>
         </div>
     )
 }

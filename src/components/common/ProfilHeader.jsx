@@ -1,5 +1,5 @@
 
-import '../../sass/dashboard.scss'
+import '../../sass/profile.scss'
 
 function ProfilHeader() {
     return(

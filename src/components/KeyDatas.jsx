@@ -1,29 +1,42 @@
 import '../sass/KeyDatas.scss'
 import { useFetch } from '../utils/hooks/useFetch'
-import CaloriesIcon from '../assets/calories-icon.svg'
-import ProteinIcon from '../assets/protein-icon.svg'
-import CarbsIcon from '../assets/carbs-icon.svg'
-import FatIcon from '../assets/fat-icon.svg'
+import { getKeyData } from '../utils/functions'
+import Card from '../components/common/Card'
+// import CaloriesIcon from '../assets/calories-icon.svg'
+// import ProteinIcon from '../assets/protein-icon.svg'
+// import CarbsIcon from '../assets/carbs-icon.svg'
+// import FatIcon from '../assets/fat-icon.svg'
+
 
 
 function KeyDatas() {
 
-    const { data } = useFetch('./datas/user.json')
+    const { data, isLoading, error } = useFetch('./datas/user.json')
+    
+    const keyDatas = getKeyData(data?.keyData, isLoading)
 
-    let calorieCount, proteinCount, carbCount, lipidCount
+    if (error) {
+        return <span>Oups il y a eu un problème</span>
+    }  
 
-    Object.getOwnPropertyNames(data).forEach((key) => {
-        let keyData = data[key];
-        calorieCount = keyData.calorieCount
-        proteinCount = keyData.proteinCount
-        carbCount = keyData.carbohydrateCount
-        lipidCount = keyData.lipidCount
-      })
-
-      
     return(
         <div className="keyContainer">
             <ul className="keysDataList">
+                { isLoading  ? (
+                    <div>Chargement en cours...</div>
+                ) : (
+                    keyDatas && keyDatas.map((item, index)=> 
+                    //console.log(Object.keys(item), Object.values(item))
+                    <Card 
+                        key={`${Object.keys(item)}-${index}`}
+                        type={Object.keys(item)}
+                        dataValue= {Object.values(item)}
+                    />
+                ))}             
+            </ul>
+            {/* 
+                
+
                 <li>
                     <div>
                         <img src={CaloriesIcon} alt="Calories icon" className="keyPic"/>
@@ -60,7 +73,7 @@ function KeyDatas() {
                         </div>
                     </div>
                 </li>
-            </ul> 
+            </ul>  */}
         </div>
     )
 }
