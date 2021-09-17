@@ -1,4 +1,31 @@
 .goalContainer {
-    border: 1px solid blue;
     width: 263px;
+}
+
+.graphTitle {
+    font-weight: 500;
+    font-style: normal;
+    font-size: 0.9rem;
+    color: #20253A;
+    line-height: 24px;
+    position: relative;
+    top: 24px;
+    left: 30px;
+}
+
+
+.goalLegend{
+    width: 90px;
+    margin-left: 80px;       
+    font-size: 1rem;
+    font-style: normal;
+    line-height: 26px;
+    font-weight: 500;
+    text-align: center;
+    & > span:first-child {
+        font-weight: 700;
+        font-size: 1rem;
+        font-style: normal;
+        line-height: 26px;
+    }
 }

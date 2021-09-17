@@ -1,18 +1,30 @@
-import YogaIcon from '../../assets/iconYoga.png'
-import SwimmingIcon from '../../assets/iconSwim.png'
-import CyclingIcon from '../../assets/iconBike.png'
-import GymIcon from '../../assets/iconGym.png'
-
+import { useFetch } from '../../utils/hooks/useFetch'
+import CardBanner from './CardBanner'
 
 function Banner() {
+
+    const { data, isLoading, error } = useFetch('./datas/banner.json')
+
+    const bannerIcons = data?.icons 
+
+    if (error) {
+        return <span>Oups il y a eu un problème</span>
+    }  
+
     return (
         <div className="bannerWrapper">
             <div>
                 <ul className="pictoList">
-                    <li><img src={YogaIcon} alt="Yoga icon" /></li>
-                    <li><img src={SwimmingIcon} alt="Swimming icon" /></li>
-                    <li><img src={CyclingIcon} alt="Cycling icon" /></li>
-                    <li><img src={GymIcon} alt="Gym icon" /></li>
+                    { isLoading  ? (
+                        <div>Chargement en cours...</div>
+                    ) : (
+                        bannerIcons && bannerIcons.map((item, index)=> 
+                        
+                        <CardBanner 
+                            key={`${item.id}-${index}`}
+                            description={item.description}
+                        />
+                    ))}  
                 </ul> 
             </div>
                       

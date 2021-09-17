@@ -3,10 +3,10 @@ import ProteinIcon from '../../assets/protein-icon.svg'
 import GlucideIcon from '../../assets/carbs-icon.svg'
 import LipideIcon from '../../assets/fat-icon.svg'
 
-function Card({type, dataValue}) {
+function CardKey({type, dataValue}) {
 
     let illustration, unit
-    console.log(type)
+    //console.log(type)
     switch(type[0]) {
         case 'Calories': 
             illustration = CalorieIcon
@@ -27,6 +27,7 @@ function Card({type, dataValue}) {
         default: break
     }
 
+
     return (
         <li>
             <div>
@@ -40,4 +41,4 @@ function Card({type, dataValue}) {
     )
 }
 
-export default Card
+export default CardKey
