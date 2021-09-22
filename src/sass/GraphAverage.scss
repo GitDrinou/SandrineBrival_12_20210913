@@ -11,3 +11,30 @@
         margin-left: 10px;
     }
 }
+
+.custom-LineChartTooltip {
+    background: #FFF;
+    width: 40px;
+    text-align: center;
+    & > p {
+        font-weight: 700;
+        font-style: normal;
+        font-size:0.6rem;   
+        line-height: 24px; 
+    }   
+}
+
+.custom-legend {
+    width: 190px; 
+    & > p {
+        font-weight: 500;
+        margin-left: 10px;
+        font-style: normal;
+        font-size: 1rem;
+        color: #FFF;
+        line-height: 24px;
+        opacity: 0.8;
+    }  
+    
+}
+

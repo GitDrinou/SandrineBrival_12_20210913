@@ -1,13 +1,13 @@
 import '../sass/KeyDatas.scss'
 import { useFetch } from '../utils/hooks/useFetch'
-import { getKeyData } from '../utils/functions'
+import { setData } from '../utils/function/setFunction'
 import CardKey from './common/CardKey'
 
-function KeyDatas() {
+function KeyDatas({idUser,urlKeyDatas}) {
 
-    const { data, isLoading, error } = useFetch('./datas/user.json')
+    const { data, isLoading, error } = useFetch(urlKeyDatas)
     
-    const keyDatas = getKeyData(data?.keyData, isLoading)
+    const keyDatas = setData(data?.keyData, isLoading)
 
     if (error) {
         return <span>Oups il y a eu un problème</span>

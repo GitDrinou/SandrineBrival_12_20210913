@@ -1,1 +1,1 @@
-export const PROFILE_ROUTE = "/"
+export const PROFILE_ROUTE = "/:idUser"

@@ -4,7 +4,7 @@
     padding: 24px 0 24px 32px;
     background-color: #FBFBFB;
 
-    & > h1 {
+    & > div > h1 {
         font-weight: 500;
         font-style: normal;
         font-size: 0.94rem;
@@ -14,5 +14,21 @@
         font-size: 0.8rem;
         font-family: Roboto, sans-serif;
         margin-bottom: 20px;
+    }
+}
+
+.custom-BarChartTooltip{
+    width: 39px;
+    text-align: center;
+    background: #E60000;
+    padding: 0 6px 0 6px;
+    position: relative;
+    left: 10px;
+    & > p {
+        color: #FFFF;
+        font-style: normal;
+        font-weight: 500;
+        font-size:0.6rem;  
+        line-height: 24px;
     }
 }

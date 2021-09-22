@@ -3,19 +3,22 @@ import { PieChart, Pie, Cell, Legend } from 'recharts'
 import { GRAPHLIST_WIDTH, GRAPHLIST_HEIGHT, GRAPH_GOAL_COLORS } from '../../utils/constant/global_variables'
 import '../../sass/GraphGoal.scss'
 
-function Goal() {
+function Goal({idUser,urlGraphGoal}) {
 
-    const { data, isLoading, error } = useFetch('./datas/user.json')
-    const goalData = [{"objectif" : data["todayScore"]*100}]
-    goalData.push({"objectif" : 100-data["todayScore"]*100})
-    const actualGoal =  data["todayScore"]*100
-    
+    const { data, isLoading, error } = useFetch(urlGraphGoal)
+     
     if (error) {
         return <span>Oups il y a eu un problème</span>
     }  
 
-    const renderLegend = () => {
+   const goalData = data?.todayScore
         
+    const arrData = [{"objectif" : goalData*100}]
+    arrData.push({"objectif" : 100-goalData*100})
+    const actualGoal =  goalData*100
+
+    const renderLegend = () => {
+    
         return (
             <div className="goalLegend">
                 <span>{actualGoal}%</span>
@@ -26,16 +29,16 @@ function Goal() {
 
     return (
         <div className="goalContainer">
-            { isLoading  ? (
+            {  isLoading  ? (
                     <div>Chargement en cours...</div>
             ) : (
                 <div>
                     <span className="graphTitle">Score</span>
                     <PieChart width={GRAPHLIST_WIDTH} height={GRAPHLIST_HEIGHT-24}>
                     <Pie
-                        dataKey="objectif"
+                        dataKey='objectif'
                         isAnimationActive={true}
-                        data={goalData}
+                        data={arrData}
                         cx="50%"
                         cy="50%"
                         innerRadius={75} 
@@ -45,14 +48,13 @@ function Goal() {
                         startAngle={90}
                         endAngle={450}
                     >
-                        {goalData.map((entry, index) => (
+                        {arrData.map((entry, index) => (
                             <Cell key={`cell-${index}`} fill={GRAPH_GOAL_COLORS[index % GRAPH_GOAL_COLORS.length]} />
                           ))}
                     </Pie>
                     <Legend content={renderLegend} verticalAlign="middle" align="center" />
                 </PieChart>
-                </div>
-                
+                </div>                
             )}
         </div>
     )

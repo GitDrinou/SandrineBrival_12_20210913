@@ -1,20 +1,22 @@
 {
-    "icons" : [
-        {
-            "id": "01",
-            "description": "Yoga"
-        },
-        {
-            "id": "02",
-            "description": "Swimming"
-        },
-        {
-            "id": "03",
-            "description": "Biking"
-        },
-        {
-            "id": "04",
-            "description": "Gymnastic"
-        }
-    ]
+    "data": {
+        "icons" : [
+            {
+                "id": "01",
+                "description": "Yoga"
+            },
+            {
+                "id": "02",
+                "description": "Swimming"
+            },
+            {
+                "id": "03",
+                "description": "Biking"
+            },
+            {
+                "id": "04",
+                "description": "Gymnastic"
+            }
+        ]
+    }
 }
