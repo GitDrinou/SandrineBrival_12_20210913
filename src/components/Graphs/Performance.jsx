@@ -1,27 +1,9 @@
-import { useFetch } from '../../utils/hooks/useFetch'
-import { setLabel } from '../../utils/function/setFunction'
-import { graphPerformanceData } from '../../utils/function/graphFunction'
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from 'recharts'
 import { GRAPHLIST_WIDTH, GRAPHLIST_HEIGHT } from '../../utils/constant/global_variables'
 import '../../sass/GraphPerformance.scss'
 
-function Performance({idUser,urlGraphPerformance}) {
+function Performance({idUser,performances, isLoading}) {
 
-    const { data, isLoading, error } = useFetch(urlGraphPerformance)
-    const performanceData = data?.data
-    const performanceLabel = data?.kind
-  
-    if (error) {
-        return <span>Oups il y a eu un problème</span>
-    }  
-
-    const newPerformance = setLabel(performanceLabel, performanceData)
-
-    const graphRadarDatas = []
-    for(let item in newPerformance) {
-        graphRadarDatas.push(graphPerformanceData(newPerformance[item].labelKind, newPerformance[item].value))
-    }
-    
     return (    
         <div className="performContainer">
             { isLoading  ? (
@@ -33,7 +15,7 @@ function Performance({idUser,urlGraphPerformance}) {
                     height={GRAPHLIST_HEIGHT} 
                     cx="50%" 
                     cy="50%" 
-                    data={graphRadarDatas} 
+                    data={performances} 
                     startAngle={90}
                 >
                     <PolarGrid />

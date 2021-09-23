@@ -1,15 +1,10 @@
 import '../../sass/profile.scss'
-import { useFetch } from '../../utils/hooks/useFetch'
+import { useAPIFetch } from '../../utils/hooks/useFetch'
 
-function ProfilHeader({idUser, url}) {
+function ProfilHeader({idUser}) {
 
-    const { data, isLoading, error } = useFetch(url)
+    const { dataUser, isLoading } = useAPIFetch(idUser, '')
 
-    const userDatas = data?.userInfos
-
-    if (error) {
-        return <span>Oups il y a eu un problème</span>
-    } 
 
     return(
         <div className="profilHeader-wrapper">
@@ -17,7 +12,7 @@ function ProfilHeader({idUser, url}) {
                     <div>Chargement en cours...</div>
             ) : (
                 <div>
-                    <h1>Bonjour <span className="userName">{userDatas.firstName}</span></h1>
+                    <h1>Bonjour <span className="userName">{dataUser.firstName}</span></h1>
                     <p>Félicitation! Vous avez explosé vos objectifs hier 👏 </p>
                 </div>                
             )}

@@ -1,7 +1,9 @@
-export const URL_DATA_USER = './datas/newuser.json'
-export const URL_DATA_ACTIVITY = './datas/newactivity.json'
-export const URL_DATA_AVERAGE = './datas/newaverage.json'
-export const URL_DATA_PERFORMANCE = './datas/newperformance.json'
+export const API_SERVER = 'http://localhost:3000/'
+
+export const ENDPOINT_ACTIVITY = 'activity'
+export const ENDPOINT_AVERAGE = 'average-sessions'
+export const ENDPOINT_PERFORMANCE = 'performance'
+export const ENDPOINT_USER = ''
 
 export const GRAPHLIST_WIDTH = 263
 export const GRAPHLIST_HEIGHT = 238

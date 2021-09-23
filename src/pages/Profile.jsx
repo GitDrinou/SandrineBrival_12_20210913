@@ -2,8 +2,9 @@ import '../sass/profile.scss'
 import { useParams } from 'react-router-dom'
 import Banner from '../components/common/Banner'
 import ProfilHeader from '../components/common/ProfilHeader'
-import ProfilDatas from '../components/ProfilDatas'
-import { URL_DATA_USER, URL_DATA_ACTIVITY, URL_DATA_AVERAGE, URL_DATA_PERFORMANCE } from '../utils/constant/global_variables'
+import Graphics from '../components/Graphics'
+import KeyDatas from '../components/KeyDatas'
+import { ENDPOINT_ACTIVITY, ENDPOINT_AVERAGE, ENDPOINT_PERFORMANCE, ENDPOINT_USER } from '../utils/constant/global_variables'
 
 function Profile() {
 
@@ -14,17 +15,21 @@ function Profile() {
             <Banner />
             <div className="dashContainer">
                 <ProfilHeader 
-                    idUser={idUser} 
-                    url = {URL_DATA_USER}
+                    idUser={idUser}                    
                 />
-                <ProfilDatas
-                    idUser={idUser} 
-                    urlGraphActivity = {URL_DATA_ACTIVITY}
-                    urlGraphAverage = {URL_DATA_AVERAGE}
-                    urlGraphPerformance = {URL_DATA_PERFORMANCE}
-                    urlGraphGoal = {URL_DATA_USER}
-                    urlKeyDatas = {URL_DATA_USER}
-                />
+                <div className="datasWrapper">
+                    <Graphics                 
+                        idUser={idUser}
+                        endPointActivity = {ENDPOINT_ACTIVITY}
+                        endPointAverage = {ENDPOINT_AVERAGE}
+                        endPointPerformance = {ENDPOINT_PERFORMANCE}                
+                        endPointGoal = {ENDPOINT_USER}
+                    />
+                    <KeyDatas 
+                        idUser={idUser}
+                        endPointKey = {ENDPOINT_USER}
+                    />
+                </div>
             </div>
              
         </div>
