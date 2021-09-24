@@ -1,0 +1,20 @@
+{
+    "data": {
+        "users" : [
+            {
+                "id": "12",
+                "gender" : "M",
+                "firstName": "Karl",
+                "lastName": "Dovineau",
+                "age": 31
+            },
+            {
+                "id": "18",
+                "gender" : "W",
+                "firstName": "Cecilia",
+                "lastName": "Ratorez",
+                "age": 34
+            }
+        ]
+    }
+}

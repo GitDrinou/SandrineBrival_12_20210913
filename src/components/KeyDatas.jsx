@@ -1,11 +1,15 @@
-import '../sass/KeyDatas.scss'
-import { useAPIFetch } from '../utils/hooks/useFetch'
+import { useAPIFetch } from '../utils/hooks/useAPIFetch'
 import { setData } from '../utils/function/setFunction'
 import CardKey from './common/CardKey'
+import '../sass/KeyDatas.scss'
 
 function KeyDatas({idUser,endPointKey}) {
 
-    const { dataKey, isLoading } = useAPIFetch(idUser,endPointKey)
+    const { dataKey, isLoading, error } = useAPIFetch(idUser,endPointKey)
+    
+    if (error) {
+        return <span class="errorText">Oups il y a eu un problème</span>
+    }  
     
     const keyDatas = setData(dataKey, isLoading)
 
@@ -16,7 +20,6 @@ function KeyDatas({idUser,endPointKey}) {
                     <div>Chargement en cours...</div>
                 ) : (
                     keyDatas && keyDatas.map((item, index)=> 
-                    //console.log(Object.keys(item), Object.values(item))
                     <CardKey 
                         key={`${Object.keys(item)}-${index}`}
                         type={Object.keys(item)}

@@ -1,1 +1,2 @@
-export const PROFILE_ROUTE = "/:idUser"
+export const HOME_ROUTE = "/"
+export const PROFILE_ROUTE = "/Profile/:idUser"

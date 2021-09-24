@@ -1,5 +1,5 @@
 import '../../sass/profile.scss'
-import { useAPIFetch } from '../../utils/hooks/useFetch'
+import { useAPIFetch } from '../../utils/hooks/useAPIFetch'
 
 function ProfilHeader({idUser}) {
 

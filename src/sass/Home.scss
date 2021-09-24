@@ -1,0 +1,57 @@
+.homeWrapper {
+    height: 80vh;
+    margin-top: 10px;
+}
+
+.homeContainer {
+    background-color: hsl(0, 0%, 43%);
+    height: 100%;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    & > h1 {
+        font-weight: 700;
+        font-style: normal;
+        font-size: 2rem;
+        color: #FFFFFF;
+    }
+}
+
+.cardWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.cardUser {
+    list-style-type: none;
+    width: 300px;
+    & > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    
+        & > h2 {
+            font-weight: 700;
+            font-style: normal;
+            font-size: 1rem;
+            color: #FFFFFF;
+            background: #FE6000;
+            padding: 10px;
+            border-radius: 6px;            
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+    }
+}
+
+.linkUser {
+    & > img {
+        width: 80%;
+    }
+    
+}

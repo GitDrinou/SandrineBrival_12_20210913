@@ -5,10 +5,28 @@ import ProfilHeader from '../components/common/ProfilHeader'
 import Graphics from '../components/Graphics'
 import KeyDatas from '../components/KeyDatas'
 import { ENDPOINT_ACTIVITY, ENDPOINT_AVERAGE, ENDPOINT_PERFORMANCE, ENDPOINT_USER } from '../utils/constant/global_variables'
+import { useAPIFetch } from '../utils/hooks/useAPIFetch'
 
 function Profile() {
 
     const { idUser } = useParams()
+
+    const {dataUser, error} = useAPIFetch(idUser,'')
+
+    if (error) {
+        return (
+            <div className="errorUser"> 
+                <p>Oups ! Il y a eu un problème</p>
+                { (dataUser.length === 0) ? (
+                    <p>Utilisateur inconnu</p>
+                ) :
+                ( 
+                    <p>Erreur dans l'accès aux données</p>
+                )}
+            </div>
+        )
+    }  
+
 
     return (
         <div className="dashbWrapper">

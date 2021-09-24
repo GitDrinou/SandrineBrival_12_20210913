@@ -1,4 +1,4 @@
-import { useAPIFetch } from '../utils/hooks/useFetch'
+import { useAPIFetch } from '../utils/hooks/useAPIFetch'
 import { graphActivityData, graphAverageData,graphPerformanceData } from '../utils/function/graphFunction'
 import { setLabel } from '../utils/function/setFunction'
 import Activity from './Graphs/Activity'
@@ -12,8 +12,8 @@ function Graphics({idUser,endPointActivity,endPointAverage,endPointPerformance, 
 
   const { dataActivity } = useAPIFetch(idUser,endPointActivity)
   const { dataAverage } = useAPIFetch(idUser,endPointAverage)
-  const { dataPerformance, isLoading } = useAPIFetch(idUser,endPointPerformance)
-  const { dataGoal } = useAPIFetch(idUser,endPointGoal)
+  const { dataPerformance } = useAPIFetch(idUser,endPointPerformance)
+  const { dataGoal, isLoading } = useAPIFetch(idUser,endPointGoal)
 
   // Create an array for Bar Chart with activity datas
   const graphBarDatas = []
@@ -47,11 +47,13 @@ function Graphics({idUser,endPointActivity,endPointAverage,endPointPerformance, 
       <Activity 
         idUser={idUser}
         activities = {graphBarDatas}
+        isLoading = {isLoading}
       />
       <div className="graphList">
         <Average 
           idUser={idUser}
           averages = {graphLineDatas}
+          isLoading = {isLoading}
         />
         <Performance 
           idUser={idUser}
@@ -62,6 +64,7 @@ function Graphics({idUser,endPointActivity,endPointAverage,endPointPerformance, 
           idUser={idUser}
           goals = {arrData}
           actualGoal = {actualGoal}
+          isLoading = {isLoading}
         />
       </div>
     </div>

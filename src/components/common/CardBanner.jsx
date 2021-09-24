@@ -1,7 +1,7 @@
-import YogaIcon from '../../assets/iconYoga.png'
-import SwimmingIcon from '../../assets/iconSwim.png'
-import BikingIcon from '../../assets/iconBike.png'
-import GymnasticIcon from '../../assets/iconGym.png'
+import YogaIcon from '../../assets/yoga-icon.png'
+import SwimmingIcon from '../../assets/swimming-icon.png'
+import BikingIcon from '../../assets/cyclist-icon.png'
+import BodybuildingIcon from '../../assets/dumbbell-icon.png'
 
 function CardBanner({description}) {
 
@@ -14,11 +14,11 @@ function CardBanner({description}) {
         case 'Swimming': 
             picture = SwimmingIcon
             break
-        case 'Biking': 
+        case 'Cycling': 
             picture = BikingIcon
             break
-        case 'Gymnastic':  
-            picture = GymnasticIcon
+        case 'Bodybuilding':  
+            picture = BodybuildingIcon
             break
         default: break
     }

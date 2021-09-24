@@ -1,7 +1,8 @@
 import { LineChart, XAxis, Tooltip, Legend, Line, YAxis } from 'recharts'
+import { GRAPHLIST_WIDTH, GRAPHLIST_HEIGHT } from '../../utils/constant/global_variables'
 import '../../sass/GraphAverage.scss'
 
-function Average({idUser, averages}) {
+function Average({idUser, averages, isLoading}) {
 
     const CustomLineChartTooltip = ({ active, payload }) => {
         if (active) {
@@ -26,13 +27,17 @@ function Average({idUser, averages}) {
 
     return (
         <div className="averageContainer">
-            <LineChart width={263} height={238} data={averages} margin={{ top: 0, right: 5, left: 5, bottom: 5 }}>
-                <XAxis dataKey="abs" tick={{fill:"white"}} padding={{ left: 5, right: 5 }} />
-                <YAxis dataKey="ord" hide="true" />
-                <Tooltip content={<CustomLineChartTooltip />} />
-                <Line type="monotone" dataKey="ord" strokeDashArray="0" strokeWidth={2} dot={false} unit="min" stroke="white" animationBegin={0} activeDot={{ stroke: 'white', strokeWidth: 2, fill: 'white', r: 3 }} />
-                <Legend verticalAlign="top" align="left" content={renderLegend}  />                
-            </LineChart>
+            { isLoading  ? (
+                    <div>Chargement en cours...</div>
+            ) : (
+                <LineChart width={GRAPHLIST_WIDTH} height={GRAPHLIST_HEIGHT} data={averages} margin={{ top: 0, right: 5, left: 5, bottom: 5 }}>
+                    <XAxis dataKey="abs" tick={{fill:"white"}} padding={{ left: 5, right: 5 }} />
+                    <YAxis dataKey="ord" hide="true" />
+                    <Tooltip content={<CustomLineChartTooltip />} />
+                    <Line type="monotone" dataKey="ord" strokeDashArray="0" strokeWidth={2} dot={false} unit="min" stroke="white" animationBegin={0} activeDot={{ stroke: 'white', strokeWidth: 2, fill: 'white', r: 3 }} />
+                    <Legend verticalAlign="top" align="left" content={renderLegend}  />                
+                </LineChart>
+            )}
         </div>
     )
 }

@@ -1,12 +1,12 @@
-import CalorieIcon from '../../assets/calories-icon.svg'
+import CalorieIcon from '../../assets/calorie-icon.svg'
 import ProteinIcon from '../../assets/protein-icon.svg'
-import GlucideIcon from '../../assets/carbs-icon.svg'
-import LipideIcon from '../../assets/fat-icon.svg'
+import CarbIcon from '../../assets/carb-icon.svg'
+import LipidIcon from '../../assets/lipid-icon.svg'
 
 function CardKey({type, dataValue}) {
 
     let illustration, unit
-    //console.log(type)
+    
     switch(type[0]) {
         case 'Calories': 
             illustration = CalorieIcon
@@ -17,11 +17,11 @@ function CardKey({type, dataValue}) {
             unit = 'g'
             break
         case 'Glucides': 
-            illustration = GlucideIcon
+            illustration = CarbIcon
             unit = 'g'
             break
         case 'Lipides':  
-            illustration = LipideIcon
+            illustration = LipidIcon
             unit = 'g'
             break
         default: break

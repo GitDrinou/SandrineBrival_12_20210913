@@ -1,9 +1,10 @@
 import { useFetch } from '../../utils/hooks/useFetch'
+import { URL_JSON_BANNER } from '../../utils/constant/global_variables'
 import CardBanner from './CardBanner'
 
 function Banner() {
 
-    const { data, isLoading, error } = useFetch('./datas/banner.json')
+    const { data, isLoading, error } = useFetch(URL_JSON_BANNER)
 
     const bannerIcons = data?.icons 
 

@@ -1,5 +1,5 @@
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from 'recharts'
-import { GRAPHLIST_WIDTH, GRAPHLIST_HEIGHT } from '../../utils/constant/global_variables'
+import { GRAPHLIST_WIDTH, GRAPHLIST_HEIGHT, GRAPH_RADAR_STROKE_COLOR, GRAPH_RADAR_FILL_COLOR } from '../../utils/constant/global_variables'
 import '../../sass/GraphPerformance.scss'
 
 function Performance({idUser,performances, isLoading}) {
@@ -20,7 +20,7 @@ function Performance({idUser,performances, isLoading}) {
                 >
                     <PolarGrid />
                     <PolarAngleAxis dataKey="angle" tick={{ fill: 'white', fontSize: 12}}  />
-                    <Radar dataKey="radar" stroke="#8884d8" fill="#FF0101" fillOpacity={0.7} />
+                    <Radar dataKey="radar" stroke={GRAPH_RADAR_STROKE_COLOR} fill={GRAPH_RADAR_FILL_COLOR} fillOpacity={0.7} />
                 </RadarChart>
             )}
         </div>

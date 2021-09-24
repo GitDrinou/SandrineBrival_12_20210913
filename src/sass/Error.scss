@@ -1,0 +1,27 @@
+.errorWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    font-weight: 700;
+    font-style: normal;
+
+    & > img {
+        width: 50%;
+        height: auto;
+    }
+    
+    & > p {
+        font-size: 1.5rem;
+
+    }
+
+    & > button {
+        background: #E60000;
+        border: none;
+        padding: 10px;
+        color: #FFFF;
+        cursor: pointer;        
+    }
+}
