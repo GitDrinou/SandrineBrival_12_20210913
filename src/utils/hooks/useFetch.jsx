@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react"
 
 /**
- * useFetch hook
- * @param { string } url 
- * @returns data from json file
+ * <em>PERSONALIZED HOOK</em><br>
+ * This function use the fetch method to get datas.
+ * @param {string} url The JSON file url
+ * @returns An object with different key/value : <br>
+ * - isLoading ; to indicate if datas are load or not
+ * - error : to indicate if there's an error on the fetch method
+ * - data : display the selected informations for the left banner, or for the temporary home page
  */
 
 export function useFetch(url) {   

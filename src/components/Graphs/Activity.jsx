@@ -1,10 +1,28 @@
+import { Loader } from "../../utils/style/Loader"
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from "recharts"
 import { GRAPH_ACTIVITY_WIDTH, GRAPH_ACTIVITY_HEIGHT, GRAPH_BAR_ORD1_COLOR, GRAPH_BAR_ORD2_COLOR,GRAPH_BAR_ORD1_NAME,GRAPH_BAR_ORD2_NAME } from "../../utils/constant/global_variables"
 import '../../sass/GraphActivity.scss'
 
+/**
+ * <em>GRAPHIC COMPONENT</em><br>
+ * This component function display the Activity's bar chart
+ * @param {array} activities This array contains <br>
+ * - (string) "day" as abs 
+ * - (number) "kilogram" as ord1 
+ * - (number) "calories" as ord2 
+ * @param {boolean} isLoading It indicate if the data is loading or not
+ * @returns the componant recharts BarChart. <br>
+ * Using different global variables : <br>
+ * - GRAPH_ACTIVITY_WIDTH : the graph's width
+ * - GRAPH_ACTIVITY_HEIGHT : the graph's height
+ * - GRAPH_BAR_ORD1_COLOR : the ord1's color
+ * - GRAPH_BAR_ORD2_COLOR : the ord2's color
+ * - GRAPH_BAR_ORD1_NAME : the ord1's label for the chart's legend
+ * - GRAPH_BAR_ORD2_NAME : the ord2's label for the chart's legend
+ */
 
-function Activity({idUser, activities, isLoading}) {
-    
+function Activity({activities, isLoading}) {
+  
     const CustomBarChartTooltip = ({ active, payload }) => {
         if (active) {
             return (
@@ -22,7 +40,7 @@ function Activity({idUser, activities, isLoading}) {
         <div className="activityWrapper">
             <h1>Activités quotidiennes</h1>
             { isLoading  ? (
-                    <div>Chargement en cours...</div>
+                    <Loader />
             ) : (
                 <BarChart width={GRAPH_ACTIVITY_WIDTH} height={GRAPH_ACTIVITY_HEIGHT} data={activities} margin={{top: 5, right: 30, left: 20, bottom: 5}}>
                     <CartesianGrid strokeDasharray="3 3" />

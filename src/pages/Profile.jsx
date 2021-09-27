@@ -7,6 +7,11 @@ import KeyDatas from '../components/KeyDatas'
 import { ENDPOINT_ACTIVITY, ENDPOINT_AVERAGE, ENDPOINT_PERFORMANCE, ENDPOINT_USER } from '../utils/constant/global_variables'
 import { useAPIFetch } from '../utils/hooks/useAPIFetch'
 
+/**
+ * <em>PAGE COMPONENT</em><br>
+ * This component function display the two parts of the profil's page 
+ * @returns The graphics and key datas of the user define by the param's link (useParams)
+ */
 function Profile() {
 
     const { idUser } = useParams()

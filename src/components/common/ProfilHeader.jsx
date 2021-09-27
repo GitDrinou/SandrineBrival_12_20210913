@@ -1,10 +1,16 @@
 import '../../sass/profile.scss'
 import { useAPIFetch } from '../../utils/hooks/useAPIFetch'
 
+/**
+ * <em>COMMON COMPONENT</em><br>
+ * This component function display the welcome message on the profil's page
+ * @param {string} idUser the user id selected
+ * @returns The personalized Welcome message with the firstName's user and congratulations text
+ */
+
 function ProfilHeader({idUser}) {
 
     const { dataUser, isLoading } = useAPIFetch(idUser, '')
-
 
     return(
         <div className="profilHeader-wrapper">

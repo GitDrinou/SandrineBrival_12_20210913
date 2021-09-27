@@ -1,8 +1,20 @@
+import { Loader } from "../../utils/style/Loader"
 import { LineChart, XAxis, Tooltip, Legend, Line, YAxis } from 'recharts'
 import { GRAPHLIST_WIDTH, GRAPHLIST_HEIGHT } from '../../utils/constant/global_variables'
 import '../../sass/GraphAverage.scss'
 
-function Average({idUser, averages, isLoading}) {
+/**
+ * <em>GRAPHIC COMPONENT</em><br>
+ * This component function display the Average's line chart
+ * @param {array} averages This array contains <br>
+ * - (string) "day" as abs 
+ * - (number) "sessionLength" as ord
+ * @param {boolean} isLoading It indicate if the data is loading or not
+ * @returns the componant recharts LineChart. <br>
+ * - GRAPHLIST_WIDTH : the graph's width
+ * - GRAPHLIST_HEIGHT : the graph's height
+ */
+function Average({averages, isLoading}) {
 
     const CustomLineChartTooltip = ({ active, payload }) => {
         if (active) {
@@ -28,7 +40,7 @@ function Average({idUser, averages, isLoading}) {
     return (
         <div className="averageContainer">
             { isLoading  ? (
-                    <div>Chargement en cours...</div>
+                    <Loader />
             ) : (
                 <LineChart width={GRAPHLIST_WIDTH} height={GRAPHLIST_HEIGHT} data={averages} margin={{ top: 0, right: 5, left: 5, bottom: 5 }}>
                     <XAxis dataKey="abs" tick={{fill:"white"}} padding={{ left: 5, right: 5 }} />

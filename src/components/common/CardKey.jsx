@@ -3,6 +3,16 @@ import ProteinIcon from '../../assets/protein-icon.svg'
 import CarbIcon from '../../assets/carb-icon.svg'
 import LipidIcon from '../../assets/lipid-icon.svg'
 
+/**
+ * <em>COMMON COMPONENT</em><br>
+ * This component function display the different keys data of the user's profile
+ * @param {string} type This is the key label
+ * @param {object} dataValue This is the key value
+ * @returns It returns a block with different informations : <br>
+ * - the illustration
+ * - the value and unit of the data
+ * - the label of the key data
+ */
 function CardKey({type, dataValue}) {
 
     let illustration, unit

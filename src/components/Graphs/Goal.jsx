@@ -1,8 +1,23 @@
+import { Loader } from "../../utils/style/Loader"
 import { PieChart, Pie, Cell, Legend } from 'recharts'
 import { GRAPHLIST_WIDTH, GRAPHLIST_HEIGHT, GRAPH_GOAL_COLORS } from '../../utils/constant/global_variables'
 import '../../sass/GraphGoal.scss'
 
-function Goal({idUser, goals, actualGoal, isLoading}) {
+
+/**
+ * <em>GRAPHIC COMPONENT</em><br>
+ * This component function display the Goal's Pie chart
+ * @param {array} goals This array contains 2 items <br>
+ * - (number) "objectif" : item 0 - value of the actual goal
+ * - (number) "objectif" : item 1 - difference between the actual goal and the max goal (default 100)
+ * @param {number} actualGoal This value is for the legend and equal to the item 0 of the goals array
+ * @param {boolean} isLoading It indicate if the data is loading or not
+ * @returns the componant recharts PieChart. <br>
+ * - GRAPHLIST_WIDTH : the graph's width
+ * - GRAPHLIST_HEIGHT : the graph's height
+ * - GRAPH_GOAL_COLORS : the graph's colors
+ */
+function Goal({goals, actualGoal, isLoading}) {
 
     const renderLegend = () => {
     
@@ -19,7 +34,7 @@ function Goal({idUser, goals, actualGoal, isLoading}) {
                 <div>
                     <span className="graphTitle">Score</span>
                     { isLoading  ? (
-                        <div>Chargement en cours...</div>
+                        <Loader />
                     ) : (
                         <PieChart width={GRAPHLIST_WIDTH} height={GRAPHLIST_HEIGHT-24}>
                         <Pie

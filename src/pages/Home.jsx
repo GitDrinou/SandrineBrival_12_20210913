@@ -5,6 +5,16 @@ import { URL_JSON_HOME } from '../utils/constant/global_variables'
 import { Link } from 'react-router-dom'
 import '../sass/Home.scss'
 
+/**
+ * <em>PAGE COMPONENT</em><br>
+ * This component function display a temporary user profile selection for testing the profil's page and the API calls
+ * @returns A block selection with 2 choices coming from a temp JSON File containing :<br>
+ * - the id's user
+ * - the gender's user for diplaying the right illustration
+ * - the firstname's user
+ * - the lastname's user
+ * and redirecting to the right user profil's page
+ */
 function Home() {
 
     const { data, isLoading, error } = useFetch(URL_JSON_HOME)

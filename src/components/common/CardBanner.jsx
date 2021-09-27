@@ -3,6 +3,12 @@ import SwimmingIcon from '../../assets/swimming-icon.png'
 import BikingIcon from '../../assets/cyclist-icon.png'
 import BodybuildingIcon from '../../assets/dumbbell-icon.png'
 
+/**
+ * <em>COMMON COMPONENT</em><br>
+ * This component function display an icon image
+ * @param {string} description the description of the icon image (ex: Swimming, Cycling,..)
+ * @returns the icon image
+ */
 function CardBanner({description}) {
 
     let picture

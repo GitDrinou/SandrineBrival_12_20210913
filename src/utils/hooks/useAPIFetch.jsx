@@ -1,6 +1,21 @@
 import { useState, useEffect } from "react"
 import { API_SERVER, ENDPOINT_ACTIVITY, ENDPOINT_AVERAGE, ENDPOINT_PERFORMANCE, ENDPOINT_USER } from '../constant/global_variables'
 
+/**
+ * <em>PERSONALIZED HOOK</em><br>
+ * This function do an API Call using fetch method.
+ * @param {string} idUser The user's id
+ * @param {string} endPoint The endpoint's label
+ * @returns An object with different key/value for graphics and key datas part : <br>
+ * - isLoading ; to indicate if datas are load or not
+ * - error : to indicate if there's an error on the fetch method
+ * - dataUser : display the user's information
+ * - dataActivity : display the activity's datas user
+ * - dataAverage : display the average's datas user
+ * - dataPerformance : display the performance's datas user
+ * - dataGoal : display the today score's data user as goal data
+ * - dataKey : display the key datas's user
+ */
 
 export function useAPIFetch(idUser,endPoint) {   
 

@@ -1,12 +1,23 @@
 import { useAPIFetch } from '../utils/hooks/useAPIFetch'
 import { graphActivityData, graphAverageData,graphPerformanceData } from '../utils/function/graphFunction'
 import { setLabel } from '../utils/function/setFunction'
+import { Loader } from '../utils/style/Loader'
 import Activity from './Graphs/Activity'
 import Average from './Graphs/Average'
 import Performance from './Graphs/Performance'
 import Goal from './Graphs/Goal'
 import '../sass/Graphics.scss'
 
+/**
+ * <em>MAIN GRAPHIC COMPONENT</em><br>
+ * This component function display all graphics on the profil's page
+ * @param {string} idUser The user id of the user selected
+ * @param {string} endPointActivity The activity label endpoint
+ * @param {string} endPointAverage The average label endpoint 
+ * @param {string} endPointPerformance The performance label endpoint 
+ * @param {string} endPointGoal The goal label endpoint
+ * @returns The differents graphics component : Activity, Average, Performance, Goal with their props as function params
+ */
 
 function Graphics({idUser,endPointActivity,endPointAverage,endPointPerformance, endPointGoal}) {
 
@@ -43,30 +54,32 @@ function Graphics({idUser,endPointActivity,endPointAverage,endPointPerformance, 
   const actualGoal =  dataGoal*100
 
   return (
-    <div className="graphWrapper">     
-      <Activity 
-        idUser={idUser}
-        activities = {graphBarDatas}
-        isLoading = {isLoading}
-      />
-      <div className="graphList">
-        <Average 
-          idUser={idUser}
-          averages = {graphLineDatas}
-          isLoading = {isLoading}
-        />
-        <Performance 
-          idUser={idUser}
-          performances = {graphRadarDatas}
-          isLoading = {isLoading}
-        />
-        <Goal  
-          idUser={idUser}
-          goals = {arrData}
-          actualGoal = {actualGoal}
-          isLoading = {isLoading}
-        />
-      </div>
+    <div className="graphWrapper">
+      { isLoading  ? (
+          <Loader />
+      ) : (
+        <div>               
+          <Activity
+            activities = {graphBarDatas}
+            isLoading = {isLoading}
+          />
+          <div className="graphList">
+            <Average
+              averages = {graphLineDatas}
+              isLoading = {isLoading}
+            />
+            <Performance
+              performances = {graphRadarDatas}
+              isLoading = {isLoading}
+            />
+            <Goal
+              goals = {arrData}
+              actualGoal = {actualGoal}
+              isLoading = {isLoading}
+            />
+          </div>
+        </div>
+      )}
     </div>
   )
 }
