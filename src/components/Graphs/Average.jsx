@@ -5,10 +5,10 @@ import '../../sass/GraphAverage.scss'
 
 /**
  * GRAPHIC COMPONENT : This component function display the Average's line chart
- * @param {array} averages This array contains <br>
+ * @param {(property|array)} averages This array contains <br>
  * - (string) "day" as abs 
  * - (number) "sessionLength" as ord
- * @param {boolean} isLoading It indicate if the data is loading or not
+ * @param {(property|boolean)} isLoading It indicate if the data is loading or not
  * @returns the componant recharts LineChart. <br>
  * - GRAPHLIST_WIDTH : the graph's width
  * - GRAPHLIST_HEIGHT : the graph's height

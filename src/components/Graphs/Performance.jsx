@@ -5,10 +5,10 @@ import '../../sass/GraphPerformance.scss'
 
 /**
  * GRAPHIC COMPONENT : This component function display the Performance's Radar chart
- * @param {array} performances This array contains : <br>
+ * @param {(property|array)} performances This array contains : <br>
  * - (string) "kind" as angle  : kind's label
  * - (number) "value" as radar
- * @param {boolean} isLoading It indicate if the data is loading or not
+ * @param {(property|boolean)} isLoading It indicate if the data is loading or not
  * @returns the componant recharts RadarChart. <br>
  * - GRAPHLIST_WIDTH : the graph's width
  * - GRAPHLIST_HEIGHT : the graph's height

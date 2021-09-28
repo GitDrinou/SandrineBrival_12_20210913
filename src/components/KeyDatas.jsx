@@ -6,8 +6,8 @@ import '../sass/KeyDatas.scss'
 
 /**
  * MAIN KEY DATAS COMPONENT : This component function display all key datas on the profil's page
- * @param {string} idUser The user id of the user selected
- * @param {string} endPointKey The key label endpoint 
+ * @param {(property|string)} idUser The user id of the user selected
+ * @param {(property|string)} endPointKey The key label endpoint 
  * @returns A list of component (linked to CardKey component) with 2 props :<br>
  * - "type" : define the key's label
  * - "dataValue" : the key value as an object

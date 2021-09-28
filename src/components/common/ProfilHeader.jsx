@@ -3,7 +3,7 @@ import { useAPIFetch } from '../../utils/hooks/useAPIFetch'
 
 /**
  * COMMON COMPONENT : This component function display the welcome message on the profil's page
- * @param {string} idUser the user id selected
+ * @param {(property|string)} idUser the user id selected as a child property
  * @returns The personalized Welcome message with the firstName's user and congratulations text
  */
 

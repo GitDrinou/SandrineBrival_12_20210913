@@ -10,11 +10,11 @@ import '../sass/Graphics.scss'
 
 /**
  * MAIN GRAPHIC COMPONENT : This component function display all graphics on the profil's page
- * @param {string} idUser The user id of the user selected
- * @param {string} endPointActivity The activity label endpoint
- * @param {string} endPointAverage The average label endpoint 
- * @param {string} endPointPerformance The performance label endpoint 
- * @param {string} endPointGoal The goal label endpoint
+ * @param {(property|string)} idUser The user id of the user selected
+ * @param {(property|string)} endPointActivity The activity label endpoint
+ * @param {(property|string)} endPointAverage The average label endpoint 
+ * @param {(property|string)} endPointPerformance The performance label endpoint 
+ * @param {(property|string)} endPointGoal The goal label endpoint
  * @returns The differents graphics component : Activity, Average, Performance, Goal with their props as function params
  */
 

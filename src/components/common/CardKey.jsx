@@ -5,8 +5,8 @@ import LipidIcon from '../../assets/lipid-icon.svg'
 
 /**
  * COMMON COMPONENT : This component function display the different keys data of the user's profile
- * @param {string} type This is the key label
- * @param {object} dataValue This is the key value
+ * @param {(property|string)} type This is the key label
+ * @param {(property|string)} dataValue This is the key value
  * @returns It returns a block with different informations : <br>
  * - the illustration
  * - the value and unit of the data

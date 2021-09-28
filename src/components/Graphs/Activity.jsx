@@ -5,11 +5,11 @@ import '../../sass/GraphActivity.scss'
 
 /**
  * GRAPHIC COMPONENT : This component function display the Activity's bar chart
- * @param {array} activities This array contains <br>
+ * @param {(property|array)} activities This array contains <br>
  * - (string) "day" as abs 
  * - (number) "kilogram" as ord1 
  * - (number) "calories" as ord2 
- * @param {boolean} isLoading It indicate if the data is loading or not
+ * @param {(property|boolean)} isLoading It indicate if the data is loading or not
  * @returns the componant recharts BarChart. <br>
  * Using different global variables : <br>
  * - GRAPH_ACTIVITY_WIDTH : the graph's width
