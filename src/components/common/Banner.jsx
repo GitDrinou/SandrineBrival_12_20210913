@@ -3,8 +3,7 @@ import { URL_JSON_BANNER } from '../../utils/constant/global_variables'
 import CardBanner from './CardBanner'
 
 /**
- * <em>COMMON COMPONENT</em><br>
- * This component function display a list of different sports's icons<br>
+ * COMMON COMPONENT : This component function display a list of different sports's icons<br>
  * Using a personalized hooks : useFetch
  * @returns a child component with : <br>
  * - the unique key : (string)-(number)

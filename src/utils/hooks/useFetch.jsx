@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react"
 
 /**
- * <em>PERSONALIZED HOOK</em><br>
- * This function use the fetch method to get datas.
+ * PERSONALIZED HOOK : This function use the fetch method to get datas.
  * @param {string} url The JSON file url
  * @returns An object with different key/value : <br>
  * - isLoading ; to indicate if datas are load or not

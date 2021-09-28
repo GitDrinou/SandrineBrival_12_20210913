@@ -5,8 +5,7 @@ import '../../sass/GraphGoal.scss'
 
 
 /**
- * <em>GRAPHIC COMPONENT</em><br>
- * This component function display the Goal's Pie chart
+ * GRAPHIC COMPONENT : This component function display the Goal's Pie chart
  * @param {array} goals This array contains 2 items <br>
  * - (number) "objectif" : item 0 - value of the actual goal
  * - (number) "objectif" : item 1 - difference between the actual goal and the max goal (default 100)
@@ -23,8 +22,14 @@ function Goal({goals, actualGoal, isLoading}) {
     
         return (
             <div className="goalLegend">
-                <span>{actualGoal}%</span>
-                <span><br/> de votre objectif</span>
+                { isLoading  ? (
+                    <Loader />
+                ) : (
+                    <div>
+                        <span>{actualGoal}%</span>
+                        <span><br/> de votre objectif</span>
+                    </div>
+                )}
             </div>
         )
     }
@@ -36,7 +41,7 @@ function Goal({goals, actualGoal, isLoading}) {
                     { isLoading  ? (
                         <Loader />
                     ) : (
-                        <PieChart width={GRAPHLIST_WIDTH} height={GRAPHLIST_HEIGHT-24}>
+                       <PieChart width={GRAPHLIST_WIDTH} height={GRAPHLIST_HEIGHT-24}>
                         <Pie
                             dataKey='objectif'
                             isAnimationActive={true}

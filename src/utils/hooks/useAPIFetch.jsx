@@ -2,8 +2,7 @@ import { useState, useEffect } from "react"
 import { API_SERVER, ENDPOINT_ACTIVITY, ENDPOINT_AVERAGE, ENDPOINT_PERFORMANCE, ENDPOINT_USER } from '../constant/global_variables'
 
 /**
- * <em>PERSONALIZED HOOK</em><br>
- * This function do an API Call using fetch method.
+ * PERSONALIZED HOOK : This function do an API Call using fetch method.
  * @param {string} idUser The user's id
  * @param {string} endPoint The endpoint's label
  * @returns An object with different key/value for graphics and key datas part : <br>

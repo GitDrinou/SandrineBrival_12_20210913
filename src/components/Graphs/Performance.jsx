@@ -4,8 +4,7 @@ import { GRAPHLIST_WIDTH, GRAPHLIST_HEIGHT, GRAPH_RADAR_STROKE_COLOR, GRAPH_RADA
 import '../../sass/GraphPerformance.scss'
 
 /**
- * <em>GRAPHIC COMPONENT</em><br>
- * This component function display the Performance's Radar chart
+ * GRAPHIC COMPONENT : This component function display the Performance's Radar chart
  * @param {array} performances This array contains : <br>
  * - (string) "kind" as angle  : kind's label
  * - (number) "value" as radar

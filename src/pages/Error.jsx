@@ -3,8 +3,7 @@ import {useHistory} from "react-router-dom"
 import '../sass/Error.scss'
 
 /**
- * <em>PAGE COMPONENT</em><br>
- * This component function display a 404 error message
+ * PAGE COMPONENT : This component function display a 404 error message
  * @returns An illustration, with a text error and a go back button
  */
 function Error() {

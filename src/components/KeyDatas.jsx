@@ -5,8 +5,7 @@ import CardKey from './common/CardKey'
 import '../sass/KeyDatas.scss'
 
 /**
- * <em>MAIN KEY DATAS COMPONENT</em><br>
- * This component function display all key datas on the profil's page
+ * MAIN KEY DATAS COMPONENT : This component function display all key datas on the profil's page
  * @param {string} idUser The user id of the user selected
  * @param {string} endPointKey The key label endpoint 
  * @returns A list of component (linked to CardKey component) with 2 props :<br>

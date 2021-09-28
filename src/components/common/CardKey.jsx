@@ -4,8 +4,7 @@ import CarbIcon from '../../assets/carb-icon.svg'
 import LipidIcon from '../../assets/lipid-icon.svg'
 
 /**
- * <em>COMMON COMPONENT</em><br>
- * This component function display the different keys data of the user's profile
+ * COMMON COMPONENT : This component function display the different keys data of the user's profile
  * @param {string} type This is the key label
  * @param {object} dataValue This is the key value
  * @returns It returns a block with different informations : <br>

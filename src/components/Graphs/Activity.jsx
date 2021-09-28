@@ -4,8 +4,7 @@ import { GRAPH_ACTIVITY_WIDTH, GRAPH_ACTIVITY_HEIGHT, GRAPH_BAR_ORD1_COLOR, GRAP
 import '../../sass/GraphActivity.scss'
 
 /**
- * <em>GRAPHIC COMPONENT</em><br>
- * This component function display the Activity's bar chart
+ * GRAPHIC COMPONENT : This component function display the Activity's bar chart
  * @param {array} activities This array contains <br>
  * - (string) "day" as abs 
  * - (number) "kilogram" as ord1 
@@ -27,8 +26,14 @@ function Activity({activities, isLoading}) {
         if (active) {
             return (
                 <div className="custom-BarChartTooltip">
-                    <p>{`${payload[0].value}`}kg </p>
-                    <p>{`${payload[1].value}`}kCal </p>
+                    { isLoading  ? (
+                    <Loader />
+                    ) : (
+                        <div>
+                            <p>{`${payload[0].value}`}kg </p>
+                            <p>{`${payload[1].value}`}kCal </p>
+                        </div>                        
+                    )}
                 </div>
             )
         }

@@ -4,8 +4,7 @@ import { GRAPHLIST_WIDTH, GRAPHLIST_HEIGHT } from '../../utils/constant/global_v
 import '../../sass/GraphAverage.scss'
 
 /**
- * <em>GRAPHIC COMPONENT</em><br>
- * This component function display the Average's line chart
+ * GRAPHIC COMPONENT : This component function display the Average's line chart
  * @param {array} averages This array contains <br>
  * - (string) "day" as abs 
  * - (number) "sessionLength" as ord
@@ -20,7 +19,13 @@ function Average({averages, isLoading}) {
         if (active) {
             return (
                 <div className="custom-LineChartTooltip">
-                    <p>{`${payload[0].value}`} min</p>
+                    { isLoading  ? (
+                    <Loader />
+                    ) : (
+                        <div>
+                            <p>{`${payload[0].value}`} min</p>
+                        </div>
+                    )}
                 </div>
             )
         }

@@ -6,8 +6,7 @@ import { Link } from 'react-router-dom'
 import '../sass/Home.scss'
 
 /**
- * <em>PAGE COMPONENT</em><br>
- * This component function display a temporary user profile selection for testing the profil's page and the API calls
+ * PAGE COMPONENT : This component function display a temporary user profile selection for testing the profil's page and the API calls
  * @returns A block selection with 2 choices coming from a temp JSON File containing :<br>
  * - the id's user
  * - the gender's user for diplaying the right illustration

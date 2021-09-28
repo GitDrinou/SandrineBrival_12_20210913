@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/Graphics.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/Graphics.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { useAPIFetch } from '../utils/hooks/useAPIFetch'
+import { graphActivityData, graphAverageData,graphPerformanceData } from '../utils/function/graphFunction'
+import { setLabel } from '../utils/function/setFunction'
+import { Loader } from '../utils/style/Loader'
+import Activity from './Graphs/Activity'
+import Average from './Graphs/Average'
+import Performance from './Graphs/Performance'
+import Goal from './Graphs/Goal'
+import '../sass/Graphics.scss'
+
+/**
+ * MAIN GRAPHIC COMPONENT : This component function display all graphics on the profil's page
+ * @param {string} idUser The user id of the user selected
+ * @param {string} endPointActivity The activity label endpoint
+ * @param {string} endPointAverage The average label endpoint 
+ * @param {string} endPointPerformance The performance label endpoint 
+ * @param {string} endPointGoal The goal label endpoint
+ * @returns The differents graphics component : Activity, Average, Performance, Goal with their props as function params
+ */
+
+function Graphics({idUser,endPointActivity,endPointAverage,endPointPerformance, endPointGoal}) {
+
+  const { dataActivity } = useAPIFetch(idUser,endPointActivity)
+  const { dataAverage } = useAPIFetch(idUser,endPointAverage)
+  const { dataPerformance } = useAPIFetch(idUser,endPointPerformance)
+  const { dataGoal, isLoading } = useAPIFetch(idUser,endPointGoal)
+
+  // Create an array for Bar Chart with activity datas
+  const graphBarDatas = []
+  for(let item in dataActivity) {
+    graphBarDatas.push(graphActivityData(dataActivity[item].day, dataActivity[item].kilogram, dataActivity[item].calories))
+  }  
+
+  // Create an array for Line with average datas
+  const graphLineDatas = []
+  for(let item in dataAverage) {
+      graphLineDatas.push(graphAverageData(dataAverage[item].day, dataAverage[item].sessionLength))
+  }
+
+  // Create an array for match kind label with value of Performance datas
+  const performanceLabel = dataPerformance?.kind
+  const newPerformance = setLabel(performanceLabel, dataPerformance?.data)
+
+  // Create an array for Radar with performance datas
+  const graphRadarDatas = []
+  for(let item in newPerformance) {
+      graphRadarDatas.push(graphPerformanceData(newPerformance[item].labelKind, newPerformance[item].value))
+  }
+
+  // Create an array for Pile Chart with user todayScore        
+  const arrData = [{"objectif" : dataGoal*100}]
+  arrData.push({"objectif" : 100-dataGoal*100})
+  const actualGoal =  dataGoal*100
+
+  return (
+    &lt;div className="graphWrapper">
+      { isLoading  ? (
+          &lt;Loader />
+      ) : (
+        &lt;div>               
+          &lt;Activity
+            activities = {graphBarDatas}
+            isLoading = {isLoading}
+          />
+          &lt;div className="graphList">
+            &lt;Average
+              averages = {graphLineDatas}
+              isLoading = {isLoading}
+            />
+            &lt;Performance
+              performances = {graphRadarDatas}
+              isLoading = {isLoading}
+            />
+            &lt;Goal
+              goals = {arrData}
+              actualGoal = {actualGoal}
+              isLoading = {isLoading}
+            />
+          &lt;/div>
+        &lt;/div>
+      )}
+    &lt;/div>
+  )
+}
+
+export default Graphics;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#Activity">Activity</a></li><li><a href="global.html#Average">Average</a></li><li><a href="global.html#Banner">Banner</a></li><li><a href="global.html#CardBanner">CardBanner</a></li><li><a href="global.html#CardKey">CardKey</a></li><li><a href="global.html#Error">Error</a></li><li><a href="global.html#Goal">Goal</a></li><li><a href="global.html#graphActivityData">graphActivityData</a></li><li><a href="global.html#graphAverageData">graphAverageData</a></li><li><a href="global.html#Graphics">Graphics</a></li><li><a href="global.html#graphPerformanceData">graphPerformanceData</a></li><li><a href="global.html#Header">Header</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#KeyDatas">KeyDatas</a></li><li><a href="global.html#Navigation">Navigation</a></li><li><a href="global.html#Performance">Performance</a></li><li><a href="global.html#Profile">Profile</a></li><li><a href="global.html#ProfilHeader">ProfilHeader</a></li><li><a href="global.html#setData">setData</a></li><li><a href="global.html#setLabel">setLabel</a></li><li><a href="global.html#useAPIFetch">useAPIFetch</a></li><li><a href="global.html#useFetch">useFetch</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Tue Sep 28 2021 14:39:03 GMT+0200 (heure d’été d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

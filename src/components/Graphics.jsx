@@ -9,8 +9,7 @@ import Goal from './Graphs/Goal'
 import '../sass/Graphics.scss'
 
 /**
- * <em>MAIN GRAPHIC COMPONENT</em><br>
- * This component function display all graphics on the profil's page
+ * MAIN GRAPHIC COMPONENT : This component function display all graphics on the profil's page
  * @param {string} idUser The user id of the user selected
  * @param {string} endPointActivity The activity label endpoint
  * @param {string} endPointAverage The average label endpoint 
