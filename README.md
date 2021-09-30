@@ -11,15 +11,9 @@ If you are working with several versions of NodeJS, we recommend you install [nv
 
 ## Dependencies installation
 
-### `npm install recharts `
-Recharts is a Redefined chart library built with React and D3.
+Execute this command to install all dependencies of this project
+### `npm install `
 
-### `npm install -g jsdoc ` 
-JSDoc 3 is an API documentation generator for JavaScript.
-This command install jsdoc globally.
-
-### `npm install styled-components ` 
-This allows to write actual CSS code to style components.
 
 ## Lauching the project
 
@@ -31,8 +25,7 @@ This allows to write actual CSS code to style components.
 
 ### 2. Run API Server
 
-- Fork the following repo GitHub : https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard
-- clone it on your computer
+- clone the following repo GitHub on your computer : https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard
 - Return to the project SportSee on the IDE, and open a new terminal
 - Change the directory and replace it by the name of the API repo folder (Ex : P9-front-end-dashboard)
 - Execute the followin npm command : `npm start `

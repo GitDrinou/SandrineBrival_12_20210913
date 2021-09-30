@@ -27,7 +27,7 @@ function Activity({activities, isLoading}) {
             return (
                 <div className="custom-BarChartTooltip">
                     { isLoading  ? (
-                    <Loader />
+                        <Loader />
                     ) : (
                         <div>
                             <p>{`${payload[0].value}`}kg </p>
