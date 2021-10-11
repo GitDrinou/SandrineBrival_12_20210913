@@ -2,7 +2,11 @@
 .averageContainer {
     background-color: #FF0000;
     width: 263px;
-    
+    @media screen and (max-width: 1024px) {
+        & > svg.recharts-surface {
+            width: 230px;
+        }
+    }
     & > .recharts-cartesian-axis-tick, .recharts-legend-item {    
         font-size: 1.2rem;
         font-family: Roboto, sans-serif;
@@ -10,6 +14,7 @@
         margin-top: 10px;
         margin-left: 10px;
     }
+    
 }
 
 .custom-LineChartTooltip {

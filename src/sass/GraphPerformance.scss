@@ -1,4 +1,9 @@
 .performContainer {
     background-color: #282D30;
-    width: 263px;    
+    width: 263px;
+    @media screen and (max-width: 1024px) {
+        & > svg.recharts-surface {
+            width: 220px;
+        }
+     }    
 }

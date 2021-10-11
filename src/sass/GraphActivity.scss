@@ -1,7 +1,7 @@
 .activityWrapper {
-    width: 830px;
+    width: 780px;
     height: auto;
-    padding: 24px 0 24px 32px;
+    padding: 24px 0 24px 0;
     background-color: #FBFBFB;
 
     & > h1 {
@@ -15,7 +15,14 @@
         font-family: Roboto, sans-serif;
         margin-bottom: 20px;
     }
+    @media screen and (max-width: 1024px) {
+        & > svg.recharts-surface {
+            width: 780px;
+            margin-right: 10px;
+        }
+     }
 }
+
 
 .custom-BarChartTooltip{
     width: 39px;

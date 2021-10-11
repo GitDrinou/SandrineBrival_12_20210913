@@ -1,5 +1,10 @@
 .goalContainer {
     width: 263px;
+    @media screen and (max-width: 1024px) {
+        & > svg.recharts-surface {
+            width: 220px;
+        }
+     }
 }
 
 .graphTitle {

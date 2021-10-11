@@ -6,7 +6,7 @@
 .bannerWrapper {
     background: #020203;
     width: 77px;
-    height: 1024px; 
+    height: 100%; 
     padding: 20px;  
     display: flex;
     flex-direction: column;
@@ -45,6 +45,10 @@
     justify-content: flex-start;
     align-items: flex-start;
     margin: 0 100px;
+    @media screen and (max-width: 1024px) {
+        margin-right: 0;
+        margin-left: 80px;
+    } 
 }
 
 .profilHeader-wrapper {
@@ -73,7 +77,9 @@
 .datasWrapper {
     display: grid;
     grid-template-columns: 840px auto;
-    //border: 1px solid red;
+    @media screen and (max-width: 1024px) {
+        grid-template-columns: 1fr;
+    } 
 }
 
 .errorUser{
